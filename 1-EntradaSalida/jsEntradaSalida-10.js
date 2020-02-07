@@ -10,7 +10,7 @@ function mostrarAumento()
     var resultado;
     importe=document.getElementById("importe").value;
     importepar=parseInt(importe);
-    descuento=(25*importe)/100;
+    descuento=importepar*0.25; // forma de sacar el porcentaje de descuento
     resultado=importepar-descuento;
     document.getElementById("resultado").value=resultado;
 }

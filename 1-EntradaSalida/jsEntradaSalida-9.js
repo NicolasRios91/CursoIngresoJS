@@ -10,7 +10,7 @@ function mostrarAumento()
     var resultado;
     importe=document.getElementById("sueldo").value;
     importepar=parseInt(importe);
-    aumento=(10*importe)/100;
+    aumento=importepar*0.10; //aumento x 0.10, en vez de usar la regla de 3 simple
     resultado=importepar+aumento;
     document.getElementById("resultado").value=resultado;
 	
