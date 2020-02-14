@@ -10,5 +10,80 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+     var lampara;
+     var marcalampara;
+     var precio;
+     var descuento;
+     var precioydescuento;
+     var resultado;
+     precio = 35;
+     lampara = document.getElementById("Cantidad").value;
+     marcalampara = document.getElementById("Marca").value;
+     descuento =0;
+
+if (lampara >= 6)
+{
+    descuento = 0.5;
+    
+}
+    else 
+    {
+        if (lampara == 5 && marcalampara== "ArgentinaLuz")
+        {
+        descuento = 0.4;
+        }
+        else 
+        {
+            if (lampara == 5)// SE PUEDE SACAR LA CONDICION "!= ARGENTINA LUZ"
+            {
+                descuento = 0.3;
+            }
+            else 
+            {
+                if (lampara == 4 && (marcalampara == "ArgentinaLuz" || marcalampara == "FelipeLamparas"))
+                {
+                    descuento = 0.25;
+                }
+                else
+                {
+                    if (lampara == 4 && !(marcalampara == "ArgentinaLuz" || marcalampara == "FelipeLamparas"))
+                    {
+                        descuento = 0.2;
+                    }
+                    else
+                    {
+                        if (lampara == 3 && marcalampara == "ArgentinaLuz")
+                        {
+                            descuento = 0.15;
+                        }
+                        else
+                        {
+                            if (lampara == 3 && marcalampara == "FelipeLamparas")
+                            {
+                                descuento = 0.1;
+                            }
+                            else
+                            {
+                                if (lampara == 3 && (marcalampara!= "ArgentinaLuz" && marcalampara != "FelipeLamparas"))
+                                {
+                                    descuento = 0.05;
+                                }                            
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    precioydescuento = (lampara*precio)*descuento;
+    resultado = (lampara*precio)- precioydescuento;
+    if (resultado > 120)
+    {
+    document.getElementById("precioDescuento").value = resultado + (resultado*0.1) + " Pago un impuesto del 10% equivalente a " + resultado*0.1;
+    }
+    else
+    {
+    document.getElementById("precioDescuento").value= resultado;
+    }
+    
 }
