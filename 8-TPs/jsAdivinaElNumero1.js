@@ -7,41 +7,40 @@ secreto del 1 al 100, en la pantalla del juego
 “Usted es un ganador!!! y en solo X intentos”.
 de no ser igual se debe informar si “falta…”  para llegar al número secreto  o si “se pasó…”  del número secreto.
 */
-var numeroSecreto; 
+var numeroSecreto;
+var numeroingresado;
 var contadorIntentos;
-
+var contadorIntentos = 1;
 function comenzar()
 {
 	//Genero el número RANDOM entre 1 y 100
-   numeroSecreto= Math.random()*100;
-   numeroSecreto= Math.round(numeroSecreto);
-		//alert(numeroSecreto );
-	
+   numeroSecreto = Math.floor(Math.random()*100+1);// *(max - min) + min
+		//alert(numeroSecreto);
 
 }
 
 function verificar()
 {
- while (document.getElementById("numero") != numeroSecreto)
+ numeroingresado = document.getElementById("numero").value;
+ while (numeroingresado != numeroSecreto)
  {
-   contadorIntentos = contadorIntentos + 1;
-   if (document.getElementById("numero")== numeroSecreto)
-   {
-     document.getElementById("intentos") = "Usted ha ganado en "+contadorIntentos +" intentos";
-     break;
-   }
-   else 
-   {
-     if (document.getElementById("numero") < numeroSecreto)
+   
+    if (numeroingresado < numeroSecreto)
      {
        alert("falta");
        contadorIntentos++;
+       break;
      }
      else 
      {
        alert("Se paso");
        contadorIntentos++;
+       break;
      }
    }
- }
+   if (numeroingresado == numeroSecreto)
+   {
+     document.getElementById("intentos").value = "ganaste en "+ contadorIntentos + " intentos";
+   }
 }
+

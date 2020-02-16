@@ -42,4 +42,6 @@ function PrecioFinal ()
     preciotres = document.getElementById("PrecioTres").value;
     preciotres = parseInt(preciotres);
     sumaiva = preciouno + preciodos + preciotres;
+    sumaiva = sumaiva + (sumaiva*0.21);
+    alert(sumaiva);
 }
