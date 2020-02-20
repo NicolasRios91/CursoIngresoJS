@@ -6,7 +6,27 @@ function mostrar()
 	var negativo=1;
 	
 	var respuesta='si';
-
+while (respuesta =="si")
+{
+contador++;
+numero = prompt("Ingrese un numero");
+numero = parseInt(numero);
+	while(isNaN(numero))
+	{	
+	numero = prompt("Ingrese un numero valido");
+	numero = parseInt(numero);	
+	}
+		if (numero >0)
+		{	
+			positivo+=numero
+		}
+		else
+		{
+			negativo*=numero;
+		}
+respuesta = prompt("Desea ingresar otro numero?");
+respuesta = respuesta.toLowerCase();
+}
 
 document.getElementById('suma').value=positivo;
 document.getElementById('producto').value=negativo;
