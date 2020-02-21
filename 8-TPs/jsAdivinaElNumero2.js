@@ -18,7 +18,7 @@ function comenzar()
 {
 	//Genero el número RANDOM entre 1 y 100
 	numeroSecreto = Math.floor(Math.random()*100+1);
-	//alert("Se ha creado un número RANDOM" + numeroSecreto);
+	alert("Se ha creado un número RANDOM");
 
 }
 
@@ -68,10 +68,10 @@ function verificar()
 		alert("falta técnica");
 		break;
 		default:
-			alert("afortunado en el amor");
-			break;
+		alert("afortunado en el amor");
+		break;
 	 }
-
+	 document.getElementById("intentos").value=contadorIntentos + " Intentos";
    }
-
+   
 }

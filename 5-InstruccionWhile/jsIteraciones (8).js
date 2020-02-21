@@ -5,10 +5,10 @@ function mostrar()
 	var positivo=0;
 	var negativo=1;
 	
-	var respuesta='si';
-while (respuesta =="si")
+	var respuesta= true;
+while (respuesta)
 {
-contador++;
+
 numero = prompt("Ingrese un numero");
 numero = parseInt(numero);
 	while(isNaN(numero))
@@ -23,9 +23,13 @@ numero = parseInt(numero);
 		else
 		{
 			negativo*=numero;
+			contador++;
 		}
-respuesta = prompt("Desea ingresar otro numero?");
-respuesta = respuesta.toLowerCase();
+		if (contador == 0)
+		{
+			negativo ="No ingreso ningun numero";
+		}
+respuesta = confirm("Desea ingresar otro numero?");
 }
 
 document.getElementById('suma').value=positivo;

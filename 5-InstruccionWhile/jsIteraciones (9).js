@@ -4,32 +4,42 @@ function mostrar()
 	var contador=0;
 	var mayor=0;
 	var menor=0;
-	// declarar variables
-	
-	var respuesta='si';
+	var primerainteraccion=true;
+	var respuesta=true;
 
-	while(respuesta!='no')
+	while(respuesta)
 	{
-		contador++;
-		var numero = prompt("Ingrese un numero");
+		numero = prompt("Ingrese un numero");
 		numero = parseInt(numero);
-		while(isNaN(numero))
-		{
-		numero = prompt("Ingrese un numero valido");
-		numero = parseInt(numero);
-		}
-		if (numero > mayor)
-		{
-			mayor=numero;
-		}
-		if (numero <menor)
-		{
-			menor=numero;
-		}
-		respuesta = prompt("Desea seguir?");
-		respuesta = respuesta.toLowerCase();
+			while(isNaN(numero))
+			{
+			numero = prompt("Ingrese un numero valido");
+			numero = parseInt(numero);
+			
+			}
+			if (primerainteraccion)//BANDERA
+			{
+				mayor = numero;
+				menor = numero;	
+				primerainteraccion=false;
+			}
+			else
+			{
+				if (numero > mayor)
+					{
+					mayor=numero;
+					}
+			
+				if (numero < menor)
+					{
+					menor= numero;
+					}
+			}	
+	
+		respuesta = confirm("Desea poner otro número?");
 	}
 document.getElementById("maximo").value = mayor;
 document.getElementById("minimo").value = menor;
 
-}//FIN DE LA FUNCIÓN
+}
+
