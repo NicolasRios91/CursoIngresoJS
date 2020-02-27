@@ -46,9 +46,12 @@ function comenzar()
 function Responder()
 {
     respuesta = document.getElementById("Respuesta").value;
+    respuesta = parseInt(respuesta);
     if (respuesta == resultado)
     {
         alert("El resultado es correcto");
+        document.getElementById("Respuesta").value = "";
+        comenzar();
     }
     else
     {
